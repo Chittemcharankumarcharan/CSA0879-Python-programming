@@ -1,0 +1,20 @@
+def calculate_total_balance():
+    # Predefined denominations in the ATM
+    denominations = [2000, 500, 200, 100]
+    total_balance = 0
+    
+    for denomination in denominations:
+        num_notes = int(input(f"Enter the number of {denomination} notes: "))
+        total_balance += denomination * num_notes
+    
+    print(f"Total Available Balance in ATM: {total_balance}")
+
+# Example usage:
+calculate_total_balance()
+
+output:
+Enter the number of 2000 notes: 1
+Enter the number of 500 notes: 4
+Enter the number of 200 notes: 32
+Enter the number of 100 notes: 20
+Total Available Balance in ATM: 12400
