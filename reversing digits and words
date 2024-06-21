@@ -1,0 +1,10 @@
+input_string = input("Enter a string: ")
+
+reversed_string = input_string[::-1]
+
+print("Reversed string:", reversed_string)
+
+output:
+
+Enter a string: 12345
+Reversed string: 54321
