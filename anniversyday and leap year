@@ -1,0 +1,31 @@
+def is_leap_year(year):
+   
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    return False
+
+def main():
+   
+    date_input = input("Enter Date (dd/mm/yyyy): ")
+    
+   
+    day, month, year = map(int, date_input.split('/'))
+    
+    print(f"Given Anniversary Year: {year}")
+    
+    if is_leap_year(year):
+        print("Given Anniversary Year: Leap Year")
+        next_anniversary_year = year + 1
+        print(f"Next Anniversary Date: {day}/{month}/{next_anniversary_year}")
+    else:
+        print("Given Anniversary Year: Non Leap Year")
+        previous_anniversary_year = year - 1
+        print(f"Previous Anniversary Date: {day}/{month}/{previous_anniversary_year}")
+
+
+main()
+output:
+Enter Date (dd/mm/yyyy): 04/07/2025
+Given Anniversary Year: 2025
+Given Anniversary Year: Non Leap Year
+Previous Anniversary Date: 4/7/2024
