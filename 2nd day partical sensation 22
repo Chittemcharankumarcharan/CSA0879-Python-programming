@@ -1,0 +1,193 @@
+n = int(input("Enter the number of values: "))
+
+numbers = []
+
+for i in range(n):
+    num = int(input(f"Enter number {i + 1}: "))
+    numbers.append(num)
+
+gcd = numbers[0]
+lcm = numbers[0]
+
+for num in numbers[1:]:
+    a, b = gcd, num
+    while b:
+        a, b = b, a % b
+    gcd = a
+
+for num in numbers[1:]:
+    lcm = lcm * num // gcd
+
+print(f"LCM = {lcm}")
+print(f"GCD = {gcd}")
+
+output
+Enter the number of values: 2
+Enter number 1: 16
+Enter number 2: 20
+LCM = 80
+GCD = 4
+
+
+12.decimal_number = int(input("Enter a decimal number: "))
+
+binary_number = bin(decimal_number)[2:]
+
+octal_number = oct(decimal_number)[2:]
+
+print(f"Binary equivalent: {binary_number}")
+print(f"Octal equivalent: {octal_number}")
+
+output
+Enter a decimal number: 13
+Binary equivalent: 1101
+Octal equivalent: 15
+
+13.rows = 5
+for i in range(1, rows + 1):
+    for j in range(1, i + 1):
+        num = 2 * j
+        print(num, end=" ")
+    print()
+output
+2 
+2 4 
+2 4 6 
+2 4 6 8 
+2 4 6 8 10 
+
+14.sorted_array = [1, 2, 2, 3, 4, 4, 4, 5, 5]
+
+unique_elements = []
+
+for num in sorted_array:
+    if num not in unique_elements:
+        unique_elements.append(num)
+print("Original Sorted Array:", sorted_array)
+print("Array after removing duplicates:", unique_elements)
+
+output
+Original Sorted Array: [1, 2, 2, 3, 4, 4, 4, 5, 5]
+Array after removing duplicates: [1, 2, 3, 4, 5]
+
+15.statement = input("Enter a statement: ")
+
+special_characters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+
+special_char_count = 0
+
+for char in statement:
+    if char in special_characters:
+        special_char_count += 1
+
+print(f"Number of special characters in the statement: {special_char_count}")
+output
+Enter a statement: saveetha@123#$
+Number of special characters in the statement: 3
+
+16.numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+prime_numbers = []
+composite_numbers = []
+
+for num in numbers:
+    if is_prime(num):
+        prime_numbers.append(num)
+    else:
+        composite_numbers.append(num)
+
+print("Prime numbers:", prime_numbers)
+print("Composite numbers:", composite_numbers)
+
+output
+
+Prime numbers: [2, 3, 5, 7, 11]
+Composite numbers: [4, 6, 8, 9, 10]
+
+17. M = 50
+N = 100
+K = 7
+
+while M <= N:
+    print(M, end=", ")
+    M += K
+
+output
+
+50, 57, 64, 71, 78, 85, 92, 99,
+
+18. matrix1 = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+matrix2 = [
+    [7, 8, 9],
+    [10, 11, 12]
+]
+
+result = [
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+for i in range(len(matrix1)):    
+    for j in range(len(matrix1[0])):   
+        result[i][j] = matrix1[i][j] + matrix2[i][j]
+
+print("Matrix Addition Result:")
+for row in result:
+    print(row)
+
+output
+Matrix Addition Result:
+[8, 10, 12]
+[14, 16, 18]
+
+19.names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve']
+
+choice = input("Enter 'asc' for ascending order or 'desc' for descending order: ").lower()
+
+if choice == 'asc':
+    sorted_names = sorted(names)  
+elif choice == 'desc':
+    sorted_names = sorted(names, reverse=True)  
+else:
+    print("Invalid choice. Please enter 'asc' or 'desc'.")
+    sorted_names = []
+
+if sorted_names:
+    print("Sorted names:", sorted_names)
+output
+
+Enter 'asc' for ascending order or 'desc' for descending order: desc
+Sorted names: ['Eve', 'David', 'Charlie', 'Bob', 'Alice']
+
+20.
+def multiplicationtable(M,N):
+    for i in range(1,N+1):
+      print(f"{M}*{i}={M*i}")
+M=1691
+N=10
+multiplicationtable(M,N)
+
+output
+
+1691*1=1691
+1691*2=3382
+1691*3=5073
+1691*4=6764
+1691*5=8455
+1691*6=10146
+1691*7=11837
+1691*8=13528
+1691*9=15219
+1691*10=16910
